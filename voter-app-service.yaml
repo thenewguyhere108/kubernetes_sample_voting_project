@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: voter-app-service
+  labels:
+    name: voter-app-service
+    app: demo-voter-app
+spec:
+  type: NodePort
+  selector:
+    name: voter-app-pod
+    app: demo-voter-app
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 32004
